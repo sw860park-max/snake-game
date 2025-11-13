@@ -3,10 +3,16 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
+  base: '/', // Ensure root base for Vercel
   server: {
     host: '0.0.0.0', // Allow access from network
     port: 5173,
     strictPort: true,
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: false,
   },
   plugins: [
     react(),

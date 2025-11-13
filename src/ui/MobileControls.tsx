@@ -26,10 +26,10 @@ export function MobileControls({ onDirectionChange, disabled }: MobileControlsPr
   `;
 
   return (
-    <div className="fixed bottom-8 left-0 right-0 flex justify-center items-center z-50 pointer-events-none">
-      <div className="pointer-events-auto">
+    <div className="fixed bottom-4 left-0 right-0 flex justify-center items-end z-50 pointer-events-none pb-safe">
+      <div className="pointer-events-auto bg-gray-900/80 backdrop-blur-sm rounded-2xl p-4 shadow-2xl">
         {/* D-Pad Style Controls */}
-        <div className="relative w-48 h-48 sm:w-56 sm:h-56">
+        <div className="relative w-44 h-44">
           {/* Up */}
           <button
             onClick={() => handleDirection('UP')}
@@ -83,7 +83,7 @@ export function MobileControls({ onDirectionChange, disabled }: MobileControlsPr
           </button>
 
           {/* Center indicator */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 sm:w-16 sm:h-16 bg-gray-800 rounded-full flex items-center justify-center text-2xl">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gray-800/80 rounded-full flex items-center justify-center text-lg">
             🎮
           </div>
         </div>

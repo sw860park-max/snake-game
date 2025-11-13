@@ -109,14 +109,18 @@ function App() {
 
   if (screen === 'game' && gameState) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 flex flex-col items-center justify-center p-2 sm:p-4 pb-24 sm:pb-4">
-        <Hud gameState={gameState} onPause={pauseGame} />
-        <CanvasView gameState={gameState} />
-        {!isMobile && (
-          <div className="mt-4 text-gray-400 text-sm">
-            Use Arrow Keys or WASD • Space to Pause
-          </div>
-        )}
+      <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 flex flex-col items-center p-2 sm:p-4">
+        {/* Mobile: Top-aligned layout with space for controls */}
+        <div className={`flex flex-col items-center w-full ${isMobile ? 'pt-4 pb-64' : 'justify-center min-h-screen'}`}>
+          <Hud gameState={gameState} onPause={pauseGame} />
+          <CanvasView gameState={gameState} />
+          {!isMobile && (
+            <div className="mt-4 text-gray-400 text-sm">
+              Use Arrow Keys or WASD • Space to Pause
+            </div>
+          )}
+        </div>
+        {/* Mobile controls fixed at bottom */}
         {isMobile && (
           <MobileControls 
             onDirectionChange={changeDirection}

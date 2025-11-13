@@ -13,7 +13,12 @@ interface CanvasViewProps {
 const getResponsiveCellSize = (gridWidth: number, gridHeight: number): number => {
   const isMobile = window.innerWidth < 768;
   const maxWidth = window.innerWidth - 32; // 16px padding on each side
-  const maxHeight = window.innerHeight - 280; // Space for HUD and controls
+  
+  // Mobile: Reserve more space for controls (260px for controls + HUD)
+  // Desktop: Reserve space for HUD only
+  const maxHeight = isMobile 
+    ? window.innerHeight - 340 // More space for mobile controls
+    : window.innerHeight - 200; // Less space needed on desktop
 
   const cellSizeByWidth = Math.floor(maxWidth / gridWidth);
   const cellSizeByHeight = Math.floor(maxHeight / gridHeight);
@@ -21,7 +26,7 @@ const getResponsiveCellSize = (gridWidth: number, gridHeight: number): number =>
   const cellSize = Math.min(cellSizeByWidth, cellSizeByHeight);
 
   // Minimum and maximum cell sizes
-  return Math.max(isMobile ? 12 : 15, Math.min(cellSize, isMobile ? 20 : 25));
+  return Math.max(isMobile ? 10 : 15, Math.min(cellSize, isMobile ? 18 : 25));
 };
 
 const GRID_COLOR = '#2a2a2a';
