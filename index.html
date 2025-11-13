@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
+    <!-- Mobile Optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- SEO and Description -->
+    <meta name="description" content="Classic Snake game with modern features - Play on mobile and desktop" />
+    <meta name="keywords" content="snake game, mobile game, web game, retro game" />
+    <meta name="author" content="Snake Game" />
+    
+    <!-- Theme and Colors -->
+    <meta name="theme-color" content="#1a1a1a" />
+    <meta name="msapplication-navbutton-color" content="#1a1a1a" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#1a1a1a" />
+    
+    <!-- Touch Icons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    
+    <title>Snake Web Game - Mobile & Desktop</title>
+    
+    <style>
+      /* Prevent iOS bounce and zoom */
+      html, body {
+        overscroll-behavior: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      
+      #root {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      /* Prevent text selection on touch */
+      * {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+      
+      /* Allow selection for inputs */
+      input, textarea {
+        -webkit-user-select: text;
+        user-select: text;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

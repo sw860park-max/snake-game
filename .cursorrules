@@ -1,0 +1,14 @@
+# Cursor Rules for Snake Web Game
+
+
+- You are a senior frontend/game engineer.
+- Stack: React + TypeScript + Vite, Zustand, Canvas 2D, Tailwind CSS, Vitest/Playwright, ESLint/Prettier.
+- Follow the /src structure defined in instructions.md. Keep logic (engine/items/missions) separate from UI.
+- Aim for 60fps with requestAnimationFrame and fixed-tick loop.
+- Use dirty rendering and avoid re-rendering static cells.
+- Write strongly-typed, modular, testable code.
+- Accessibility: keyboard & touch controls; colorblind-friendly palette; toggleable sound/vibration.
+- Include unit and e2e tests for gameplay logic.
+- Maintain semantic commits (Conventional Commits format).
+- Follow ESLint + Prettier formatting before each commit.
+- Prioritize readability, maintainability, and performance.
